@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 3421994122127699430}
   - component: {fileID: 1148045156101155946}
   - component: {fileID: 5456935680149003379}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Shell Turret
-  m_TagString: Untagged
+  m_TagString: turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53,9 +53,8 @@ MonoBehaviour:
   turretShell: {fileID: 9154270910743987948, guid: 629bc5384781fe044a4af46d2f456c6d,
     type: 3}
   firingPosition: {fileID: 30529940126087787}
-  explosionSound: {fileID: 8300000, guid: 8327bacc90a16a441903a18e8fe175b1, type: 3}
-  deathExplosion: {fileID: 3658695580563474008, guid: ff6b9a7766ff93c4fb393ca2085c5b3e,
-    type: 3}
+  explosionSound: {fileID: 3421994122127699430}
+  deathExplosion: {fileID: 5456935680149003379}
   turretRange: 10
   turretForce: 1500
   fireRate: 0.5

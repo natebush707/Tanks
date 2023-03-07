@@ -8,6 +8,7 @@ public class tankHealth : MonoBehaviour
     public float maxHealth = 100f;
     public Slider slider;
     public Image image; 
+    public float shellDamage = 25f;
 
     public ParticleSystem explosionPrefab;
     [SerializeField]
@@ -15,6 +16,9 @@ public class tankHealth : MonoBehaviour
     private ParticleSystem explosionInstance;
     private AudioSource deathSound;
 
+    private void Update() {
+        updateUI();
+    }
 
     private void Awake()
     {
@@ -44,7 +48,13 @@ public class tankHealth : MonoBehaviour
         explosionInstance.gameObject.SetActive(true);
         explosionInstance.Play();
         deathSound.Play();
-        gameObject.SetActive(false);
+        Destroy(this.gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        if(other.tag == "enemyShell"){
+            takeDamage(shellDamage);
+        }        
     }
 
 }
