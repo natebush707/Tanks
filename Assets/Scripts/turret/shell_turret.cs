@@ -21,12 +21,14 @@ public class shell_turret : MonoBehaviour
         // get player's transform on scene start
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        // fetch Audio and Particle components
-        explosionSound = GetComponent<AudioSource>();
-        deathExplosion = GetComponent<ParticleSystem>();
+        // fetch Audio and Particle components //steve you don't need these since its being referenced from the inspecter in unity
+        // explosionSound = GetComponent<AudioSource>();
+        // deathExplosion = GetComponent<ParticleSystem>();
     }
     private void Update()
     {
+        if(!player)
+            return;
         // calculate current distance to player
         playerDistance = Vector3.Distance(player.position, transform.position);
         
@@ -52,6 +54,7 @@ public class shell_turret : MonoBehaviour
         // spawn shell and make it last longer
         GameObject shellClone = Instantiate(turretShell, firingPosition.position, firingPosition.rotation);
         shellClone.GetComponent<bullet>().maxLife = 5f;
+        shellClone.tag = "enemyShell";
    
         // add forward force
         shellClone.GetComponent<Rigidbody>().AddForce(firingPosition.forward * turretForce);

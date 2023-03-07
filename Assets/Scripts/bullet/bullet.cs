@@ -10,10 +10,10 @@ public class bullet : MonoBehaviour
     public float maxLife = 2f;
 
     private ParticleSystem particleEffect;
-    
+
     void Start()
     {
-        Destroy(gameObject,maxLife);    
+        Destroy(gameObject, maxLife);
     }
 
     private void OnTriggerEnter(Collider other)
