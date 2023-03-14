@@ -7,7 +7,7 @@ public class tankHealth : MonoBehaviour
 {
     public float maxHealth = 100f;
     public Slider slider;
-    public Image image; 
+    public Image image;
     public float shellDamage = 25f;
 
     public ParticleSystem explosionPrefab;
@@ -16,9 +16,6 @@ public class tankHealth : MonoBehaviour
     private ParticleSystem explosionInstance;
     private AudioSource deathSound;
 
-    private void Update() {
-        updateUI();
-    }
 
     private void Awake()
     {
@@ -26,24 +23,30 @@ public class tankHealth : MonoBehaviour
         deathSound = explosionInstance.gameObject.GetComponent<AudioSource>();
         explosionInstance.gameObject.SetActive(false);
     }
-    private void OnEnable() {
+    private void OnEnable()
+    {
         currentHealth = maxHealth;
     }
 
-    public void takeDamage(float damageTaken){
+    public void takeDamage(float damageTaken)
+    {
+        Debug.Log(damageTaken);
         this.currentHealth -= damageTaken;
         updateUI();
 
-        if(this.currentHealth <= 0){
+        if (this.currentHealth <= 0)
+        {
             onDeath();
         }
     }
-    private void updateUI(){
-        slider.value = currentHealth/maxHealth;
+    private void updateUI()
+    {
+        slider.value = currentHealth / maxHealth;
         image.color = Color.Lerp(Color.red, Color.green, currentHealth / maxHealth);
     }
 
-    private void onDeath(){
+    private void onDeath()
+    {
         explosionInstance.transform.position = this.transform.position;
         explosionInstance.gameObject.SetActive(true);
         explosionInstance.Play();
@@ -51,10 +54,11 @@ public class tankHealth : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    private void OnTriggerEnter(Collider other) {
-        if(other.tag == "enemyShell"){
-            takeDamage(shellDamage);
-        }        
+    private void OnTriggerEnter(Collider other)
+    {
+        // if(other.tag == "enemyShell"){
+        //     takeDamage(shellDamage);
+        // }        
     }
 
 }

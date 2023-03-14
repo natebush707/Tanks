@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 74932676}
   - component: {fileID: 74932678}
   - component: {fileID: 74932677}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 242011557}
   - component: {fileID: 242011556}
   - component: {fileID: 242011555}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,7 +186,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 291521361}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 531741073}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   - component: {fileID: 592890528}
   - component: {fileID: 592890527}
   - component: {fileID: 592890526}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -338,7 +338,7 @@ GameObject:
   - component: {fileID: 1752397304}
   - component: {fileID: 1752397306}
   - component: {fileID: 1752397305}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -414,7 +414,7 @@ GameObject:
   - component: {fileID: 1813947690}
   - component: {fileID: 1813947691}
   - component: {fileID: 1813947692}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -523,7 +523,7 @@ GameObject:
   - component: {fileID: 2481891349349923629}
   - component: {fileID: 2481891349349923625}
   - component: {fileID: 2481891349349923624}
-  - component: {fileID: 407320425}
+  - component: {fileID: 3427852417080277439}
   m_Layer: 6
   m_Name: tank
   m_TagString: Player
@@ -568,7 +568,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.06283659
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -664,7 +664,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.020525932
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -921,12 +921,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 239d2a274db487c40ab041b9de93dfac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxCharge: 25
+  minCharge: 5
+  chargeSpeed: 45
   bulletPrefab: {fileID: 5302224030338407409, guid: 629bc5384781fe044a4af46d2f456c6d,
     type: 3}
   firingPosition: {fileID: 1093521014473838109}
   sfxAudio: {fileID: 2481891349349923616}
-  launchForce: 15
---- !u!114 &407320425
+  mouseDown: 0
+  chargeShot: 0
+--- !u!114 &3427852417080277439
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -941,6 +945,7 @@ MonoBehaviour:
   maxHealth: 100
   slider: {fileID: 1813947691}
   image: {fileID: 592890526}
+  shellDamage: 25
   explosionPrefab: {fileID: 19874418, guid: 43d6ec63e8b8b4a45aeae8157d0eb84b, type: 3}
   currentHealth: 0
 --- !u!1001 &5395486743889782629
@@ -950,15 +955,50 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 471304279372647597}
     m_Modifications:
+    - target: {fileID: 500725211928934365, guid: f8a74ddd8aec26749a5e76512f02d5ae,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1483837109712722989, guid: f8a74ddd8aec26749a5e76512f02d5ae,
         type: 3}
       propertyPath: m_Name
       value: tank_player
       objectReference: {fileID: 0}
+    - target: {fileID: 1483837109712722989, guid: f8a74ddd8aec26749a5e76512f02d5ae,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703094542877666598, guid: f8a74ddd8aec26749a5e76512f02d5ae,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1753813597073816807, guid: f8a74ddd8aec26749a5e76512f02d5ae,
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753813597896107427, guid: f8a74ddd8aec26749a5e76512f02d5ae,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753813597896107427, guid: f8a74ddd8aec26749a5e76512f02d5ae,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1778681820596409630, guid: f8a74ddd8aec26749a5e76512f02d5ae,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1998155395078005697, guid: f8a74ddd8aec26749a5e76512f02d5ae,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2295838904265754263, guid: f8a74ddd8aec26749a5e76512f02d5ae,
         type: 3}
@@ -1023,6 +1063,36 @@ PrefabInstance:
     - target: {fileID: 2295838904265754263, guid: f8a74ddd8aec26749a5e76512f02d5ae,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4008745318175607828, guid: f8a74ddd8aec26749a5e76512f02d5ae,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4657621207997063177, guid: f8a74ddd8aec26749a5e76512f02d5ae,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142724608562393028, guid: f8a74ddd8aec26749a5e76512f02d5ae,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147594288310205256, guid: f8a74ddd8aec26749a5e76512f02d5ae,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078689629059845439, guid: f8a74ddd8aec26749a5e76512f02d5ae,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8785000757299862250, guid: f8a74ddd8aec26749a5e76512f02d5ae,
+        type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:

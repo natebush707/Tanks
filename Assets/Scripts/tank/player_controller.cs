@@ -52,7 +52,6 @@ public class player_controller : MonoBehaviour
                 tankDriving.Play();
             }
         }
-        Debug.Log(transform.position);
     }
     void OnMove(InputValue other)
     {

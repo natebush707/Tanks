@@ -6,6 +6,7 @@ TagManager:
   tags:
   - turret
   - shell
+  - enemyShell
   layers:
   - Default
   - TransparentFX
@@ -13,8 +14,8 @@ TagManager:
   - 
   - Water
   - UI
-  - tanks
-  - 
+  - Tanks
+  - Enemy
   - 
   - 
   - 

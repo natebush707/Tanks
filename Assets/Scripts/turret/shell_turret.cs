@@ -27,11 +27,11 @@ public class shell_turret : MonoBehaviour
     }
     private void Update()
     {
-        if(!player)
+        if (!player)
             return;
         // calculate current distance to player
         playerDistance = Vector3.Distance(player.position, transform.position);
-        
+
         // if player is in range, aim and shoot
         if (playerDistance <= turretRange && !isDead)
         {
@@ -41,7 +41,7 @@ public class shell_turret : MonoBehaviour
             firingPosition.LookAt(player);
 
             // check set interval for fire rate before shooting
-            if(Time.time >= nextShot)
+            if (Time.time >= nextShot)
             {
                 nextShot = Time.time + 1f / fireRate;
                 turretShootie();
@@ -53,17 +53,30 @@ public class shell_turret : MonoBehaviour
     {
         // spawn shell and make it last longer
         GameObject shellClone = Instantiate(turretShell, firingPosition.position, firingPosition.rotation);
-        shellClone.GetComponent<bullet>().maxLife = 5f;
         shellClone.tag = "enemyShell";
-   
+        var shellScript = shellClone.GetComponent<bullet>();
+        shellScript.maxLife = 5f;
+        shellScript.radius = 1f;
+
         // add forward force
-        shellClone.GetComponent<Rigidbody>().AddForce(firingPosition.forward * turretForce);
+        // shellClone.GetComponent<Rigidbody>().AddForce(firingPosition.forward * turretForce);
+        shellClone.GetComponent<Rigidbody>().velocity = firingPosition.forward * turretForce;
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
         // play explosion particle system and audio clip on received damage from player
-        if (other.tag == "shell" && !isDead)
+        // if (other.tag == "shell" && !isDead)
+        // {
+        //     isDead = true;
+        //     deathExplosion.Play();
+        //     explosionSound.Play();
+        // }
+    }
+    public void setDead()
+    {
+        if (!isDead)
         {
             isDead = true;
             deathExplosion.Play();
