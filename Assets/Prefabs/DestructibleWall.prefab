@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 193221640414639396}
   - component: {fileID: 193221640414639397}
   - component: {fileID: 193221640414639398}
-  - component: {fileID: 8086891992645840777}
-  - component: {fileID: 7609460329634708520}
+  - component: {fileID: 4847216959611969944}
   m_Layer: 0
   m_Name: DestructibleWall
   m_TagString: Untagged
@@ -99,7 +98,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8086891992645840777
+--- !u!114 &4847216959611969944
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,21 +110,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a93ec0eabed2c54d8e6c2056a2e5057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WallExplosion: {fileID: 0}
   BrokenWall: {fileID: 6403140703895410150, guid: a95efa4765af324419a954629469b693,
     type: 3}
---- !u!54 &7609460329634708520
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 193221640414639399}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
