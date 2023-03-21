@@ -13,10 +13,7 @@ public class Shatter : MonoBehaviour
         {
             WallExplosion.Play();
             // Instantiate(BrokenWall, transform.position, transform.rotation);
-            Destroy(gameObject, 1f);
+            Destroy(gameObject, .75f);
         }
-        // WallExplosion.Play();
-        // // Instantiate(BrokenWall, transform.position, transform.rotation);
-        // Destroy(gameObject, .75f);
     }
 }
