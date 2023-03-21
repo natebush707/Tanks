@@ -6750,7 +6750,7 @@ GameObject:
   - component: {fileID: 925754457}
   m_Layer: 0
   m_Name: PyramidParent
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6770,7 +6770,7 @@ Transform:
   - {fileID: 934470807}
   - {fileID: 1733267825}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &934470807 stripped
 Transform:
@@ -7067,7 +7067,7 @@ GameObject:
   - component: {fileID: 1056013054}
   m_Layer: 0
   m_Name: 3D Objects
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7642,7 +7642,7 @@ Transform:
   - {fileID: 1834248786}
   - {fileID: 194115721}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1182763333 stripped
 Transform:
@@ -7956,7 +7956,7 @@ GameObject:
   - component: {fileID: 1271192175}
   m_Layer: 0
   m_Name: DesertWallParent
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7982,7 +7982,7 @@ Transform:
   - {fileID: 544012573}
   - {fileID: 1182763333}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1281152656
 PrefabInstance:
@@ -11264,7 +11264,7 @@ GameObject:
   - component: {fileID: 1936727297}
   m_Layer: 0
   m_Name: DesertBlockParent
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11310,7 +11310,7 @@ Transform:
   - {fileID: 1445548372}
   - {fileID: 1789596998}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1947630507
 PrefabInstance:
@@ -12479,7 +12479,7 @@ Transform:
   - {fileID: 600640029}
   - {fileID: 2015437795}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3030313485007614572
 PrefabInstance:
@@ -12646,6 +12646,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cube
+      objectReference: {fileID: 0}
+    - target: {fileID: 8104694813011070034, guid: 0c1a5cb06e00d904b8fd35b2d0cd278e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c1a5cb06e00d904b8fd35b2d0cd278e, type: 3}
