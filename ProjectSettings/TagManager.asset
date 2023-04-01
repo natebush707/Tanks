@@ -6,6 +6,7 @@ TagManager:
   tags:
   - turret
   - shell
+  - Obstacle
   layers:
   - Default
   - TransparentFX
