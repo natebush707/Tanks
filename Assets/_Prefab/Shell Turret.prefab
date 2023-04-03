@@ -56,7 +56,7 @@ MonoBehaviour:
   explosionSound: {fileID: 3421994122127699430}
   deathExplosion: {fileID: 5456935680149003379}
   turretRange: 10
-  turretForce: 1500
+  turretForce: 2000
   fireRate: 0.5
 --- !u!65 &2525157308640335358
 BoxCollider:
