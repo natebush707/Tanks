@@ -8,6 +8,7 @@ TagManager:
   - shell
   - Obstacle
   - enemyShell
+  - Eyes of Ra
   layers:
   - Default
   - TransparentFX
