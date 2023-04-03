@@ -242,7 +242,7 @@ PrefabInstance:
     - target: {fileID: 471304279372647597, guid: 1f6526753add4e44e9e42120f51660cf,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.9503832
+      value: -0.13740444
       objectReference: {fileID: 0}
     - target: {fileID: 471304279372647597, guid: 1f6526753add4e44e9e42120f51660cf,
         type: 3}
@@ -252,7 +252,7 @@ PrefabInstance:
     - target: {fileID: 471304279372647597, guid: 1f6526753add4e44e9e42120f51660cf,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.2876892
+      value: -14.332624
       objectReference: {fileID: 0}
     - target: {fileID: 471304279372647597, guid: 1f6526753add4e44e9e42120f51660cf,
         type: 3}
@@ -1140,6 +1140,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 194115721}
     m_Modifications:
+    - target: {fileID: 6243306917664339932, guid: 3081ee83a3c2aba4ca92811c8413036e,
+        type: 3}
+      propertyPath: InitialModule.size3D
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243306917664339932, guid: 3081ee83a3c2aba4ca92811c8413036e,
+        type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6243306917664339932, guid: 3081ee83a3c2aba4ca92811c8413036e,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 7516895229721745902, guid: 3081ee83a3c2aba4ca92811c8413036e,
         type: 3}
       propertyPath: m_RootOrder
