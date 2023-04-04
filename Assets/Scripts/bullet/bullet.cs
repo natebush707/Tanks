@@ -10,20 +10,19 @@ public class bullet : MonoBehaviour
     public float maxLife = 2f;
 
     private ParticleSystem particleEffect;
-    
+
     void Start()
     {
-        Destroy(gameObject,maxLife);
+        Destroy(gameObject, maxLife);
     }
 
-    private void OnTriggerEnter(Collider other) {
+    private void OnTriggerEnter(Collider other)
+    {
         // add damage to tank in here
-        
-
         shellExplosion.transform.parent = null;
-        explosionParticle.Play(); 
+        explosionParticle.Play();
         shellExplosion.Play();
-        Destroy(explosionParticle.gameObject,explosionParticle.main.duration);
+        Destroy(explosionParticle.gameObject, explosionParticle.main.duration);
         Destroy(gameObject);
     }
 }

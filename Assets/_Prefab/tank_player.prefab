@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 350391022809322241}
   m_Layer: 0
   m_Name: tank_player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -447,7 +447,7 @@ MonoBehaviour:
     type: 3}
   firingPosition: {fileID: 5029510378787334520}
   sfxAudio: {fileID: -5627290652577932620}
-  launchForce: 15
+  launchForce: 25
 --- !u!114 &350391022809322241
 MonoBehaviour:
   m_ObjectHideFlags: 0

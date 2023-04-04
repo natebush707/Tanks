@@ -524,9 +524,9 @@ GameObject:
   - component: {fileID: 2481891349349923625}
   - component: {fileID: 2481891349349923624}
   - component: {fileID: 407320425}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tank
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
