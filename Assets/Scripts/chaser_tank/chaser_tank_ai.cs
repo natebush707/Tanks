@@ -67,10 +67,6 @@ public class chaser_tank_ai : MonoBehaviour
                 this.updateFSM = updateFSM_chaser;
                 this.movement_policy = this.ai_mode_gps;
                 break;
-            case "patroller":
-                this.updateFSM = updateFSM_patroller;
-                this.movement_policy = this.ai_mode_patrol;
-                break;
             default:
                 //bro forgor :skull:
                 throw new Exception("bruh moment type: didnt specify what kind of enemy");
@@ -127,8 +123,6 @@ public class chaser_tank_ai : MonoBehaviour
     //make your own function here steve, that moves between the states as you want, after making your own method down below that sets future_location depending on how you want the tank to move
     private void updateFSM_chaser() { }
 
-    private void updateFSM_patroller() { }
-
     //MAKES MOVE BASED ON NEXT LOCATION AI_THINK HAS DECIDED IT SHOULD BE AT.
     private void drive()
     {
@@ -136,7 +130,7 @@ public class chaser_tank_ai : MonoBehaviour
         //point the tank at the location
         //start driving when within some safe degrees
         float angle = this.ai_difficulty * Time.deltaTime;
-        this.transform.Rotate(Vector3.up, angle);
+        this.ai_turret.transform.Rotate(Vector3.up, angle);
         Debug.Log("angle:");
         Debug.Log(angle);
     }
