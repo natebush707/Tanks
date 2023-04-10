@@ -54,7 +54,13 @@ public class tankHealth : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if(other.tag == "enemyShell"){
             takeDamage(shellDamage);
-        }        
+        }
+        if(other.tag == "rammer")
+        {
+            onDeath();
+        }
     }
 
 }
+
+
