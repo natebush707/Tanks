@@ -9,6 +9,8 @@ TagManager:
   - Obstacle
   - enemyShell
   - Eyes of Ra
+  - rammer
+  - chaser
   layers:
   - Default
   - TransparentFX
