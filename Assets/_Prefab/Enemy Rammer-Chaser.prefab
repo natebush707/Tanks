@@ -5218,7 +5218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   difficulty: 4
-  ai_type: 1
+  ai_type: 0
   override_color: {fileID: 0}
   death_ekusupurojon: {fileID: 8310165154714509868}
 --- !u!65 &-7269789774458497944

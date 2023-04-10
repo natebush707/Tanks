@@ -57,6 +57,7 @@ public class ram_chase : MonoBehaviour
     private bool is_shooter;                                //does the tank shoot?
     private List<int> waypoints;                            //path for tank to follow as list of ints
     private int wp_index;                                   //which waypoint within waypoints list tank currently going to
+    private float stay_away_distance;                       //how far from the player tank will the enemy tank try to be
 
     //difficulty stuff
     private float speed = 0.5f;
@@ -113,9 +114,9 @@ public class ram_chase : MonoBehaviour
         switch (ai_type)
         {
             case ai_enum.rammer:
-                this.set_tankie(this.updateFSM_rammer, this.ai_mode_gps, red, false, "rammer"); break;
+                this.set_tankie(this.updateFSM_rammer, this.ai_mode_gps, red, false, "rammer", 0); break;
             case ai_enum.chaser:
-                this.set_tankie(this.updateFSM_chaser, this.ai_mode_gps, blue, true, "chaser"); break;
+                this.set_tankie(this.updateFSM_rammer, this.ai_mode_gps, blue, true, "chaser", 7); break;
         }
 
         //TESTING TESTING TESTING TESTING
@@ -140,7 +141,6 @@ public class ram_chase : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log(this.gameObject.tag);
         if (player_tank == null)
             return;
         this.movement_policy();
@@ -234,6 +234,8 @@ public class ram_chase : MonoBehaviour
     private void ai_mode_follow()
     {
         //Debug.Log("ai mode follow");
+        if ((this.transform.position - this.player_tank.transform.position).magnitude < this.stay_away_distance)
+            return;
         this.future_location = this.player_tank.transform.position;
     }
 
@@ -319,8 +321,9 @@ public class ram_chase : MonoBehaviour
             my_son.GetChild(index).GetComponent<Renderer>().material.color = mat.color;
     }
 
-    private void set_tankie(Action updateFSM_type, Action ai_mode, Material mat, bool is_shooter, string tag_name)
+    private void set_tankie(Action updateFSM_type, Action ai_mode, Material mat, bool is_shooter, string tag_name, float stay_away_distance)
     {
+        this.stay_away_distance = stay_away_distance;
         this.gameObject.tag = tag_name;
         this.updateFSM = updateFSM_type;
         this.movement_policy = ai_mode;
