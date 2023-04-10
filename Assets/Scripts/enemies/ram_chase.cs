@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEditor.Rendering;
 using UnityEngine;
 using Utils;
@@ -84,7 +85,7 @@ public class ram_chase : MonoBehaviour
         this.ai_turret = this.transform.Find("TankRenderers/TankTurret").gameObject;
         GameObject [] temp_eyes_of_ra = GameObject.FindGameObjectsWithTag("Eyes of Ra");
 
-        this.shell = Resources.Load<GameObject>("Prefabs/Shell");
+        this.shell = Resources.Load<GameObject>("Prefabs/shelltrail");
         this.pew_location = this.transform.Find("TankRenderers/TankTurret/gun").gameObject;
 
         //Load Materials
