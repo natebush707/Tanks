@@ -754,7 +754,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!120 &7303710060471573339
 LineRenderer:
@@ -941,6 +941,7 @@ MonoBehaviour:
   maxHealth: 100
   slider: {fileID: 1813947691}
   image: {fileID: 592890526}
+  shellDamage: 25
   explosionPrefab: {fileID: 19874418, guid: 43d6ec63e8b8b4a45aeae8157d0eb84b, type: 3}
   currentHealth: 0
 --- !u!1001 &5395486743889782629
