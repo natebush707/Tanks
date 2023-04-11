@@ -27,11 +27,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 193221640414639399}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 28, y: 5, z: -5}
   m_LocalScale: {x: 10, y: 10, z: 5}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7516895229260973208}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -110,6 +111,112 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a93ec0eabed2c54d8e6c2056a2e5057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WallExplosion: {fileID: 0}
+  WallExplosion: {fileID: 6243306917873478314}
   BrokenWall: {fileID: 6403140703895410150, guid: a95efa4765af324419a954629469b693,
     type: 3}
+--- !u!1001 &478764406
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 193221640414639403}
+    m_Modifications:
+    - target: {fileID: 6243306917664339932, guid: 3081ee83a3c2aba4ca92811c8413036e,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516895229721745902, guid: 3081ee83a3c2aba4ca92811c8413036e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516895229721745902, guid: 3081ee83a3c2aba4ca92811c8413036e,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516895229721745902, guid: 3081ee83a3c2aba4ca92811c8413036e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516895229721745902, guid: 3081ee83a3c2aba4ca92811c8413036e,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516895229721745902, guid: 3081ee83a3c2aba4ca92811c8413036e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516895229721745902, guid: 3081ee83a3c2aba4ca92811c8413036e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516895229721745902, guid: 3081ee83a3c2aba4ca92811c8413036e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516895229721745902, guid: 3081ee83a3c2aba4ca92811c8413036e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516895229721745902, guid: 3081ee83a3c2aba4ca92811c8413036e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516895229721745902, guid: 3081ee83a3c2aba4ca92811c8413036e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516895229721745902, guid: 3081ee83a3c2aba4ca92811c8413036e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516895229721745902, guid: 3081ee83a3c2aba4ca92811c8413036e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516895229721745902, guid: 3081ee83a3c2aba4ca92811c8413036e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516895229721745902, guid: 3081ee83a3c2aba4ca92811c8413036e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7516895229721745902, guid: 3081ee83a3c2aba4ca92811c8413036e,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7869134339373022669, guid: 3081ee83a3c2aba4ca92811c8413036e,
+        type: 3}
+      propertyPath: m_Name
+      value: WallExplosion
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3081ee83a3c2aba4ca92811c8413036e, type: 3}
+--- !u!198 &6243306917873478314 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6243306917664339932, guid: 3081ee83a3c2aba4ca92811c8413036e,
+    type: 3}
+  m_PrefabInstance: {fileID: 478764406}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7516895229260973208 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7516895229721745902, guid: 3081ee83a3c2aba4ca92811c8413036e,
+    type: 3}
+  m_PrefabInstance: {fileID: 478764406}
+  m_PrefabAsset: {fileID: 0}
