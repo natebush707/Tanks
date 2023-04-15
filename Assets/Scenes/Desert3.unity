@@ -3416,7 +3416,7 @@ PrefabInstance:
     - target: {fileID: -5574406030136072937, guid: dcc4825f2ba71a24abd7cd7915a11a4a,
         type: 3}
       propertyPath: difficulty
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3100076542774734108, guid: dcc4825f2ba71a24abd7cd7915a11a4a,
         type: 3}
@@ -6774,7 +6774,7 @@ PrefabInstance:
     - target: {fileID: -5574406030136072937, guid: dcc4825f2ba71a24abd7cd7915a11a4a,
         type: 3}
       propertyPath: difficulty
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3100076542774734108, guid: dcc4825f2ba71a24abd7cd7915a11a4a,
         type: 3}
