@@ -6769,7 +6769,7 @@ PrefabInstance:
     - target: {fileID: -5574406030136072937, guid: dcc4825f2ba71a24abd7cd7915a11a4a,
         type: 3}
       propertyPath: ai_type
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -5574406030136072937, guid: dcc4825f2ba71a24abd7cd7915a11a4a,
         type: 3}
