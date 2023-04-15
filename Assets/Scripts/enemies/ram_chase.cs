@@ -358,7 +358,7 @@ public class ram_chase : MonoBehaviour
         List<int> temp_vis = new List<int>();
         for (int closed_eye = 0; closed_eye < this.eyes_of_ra.Count; closed_eye++)
         {
-            if (!Physics.Linecast(this.eyes_of_ra[index].eye.transform.position, this.eyes_of_ra[closed_eye].eye.transform.position))
+            if (index != closed_eye && !Physics.Linecast(this.eyes_of_ra[index].eye.transform.position, this.eyes_of_ra[closed_eye].eye.transform.position))
             {
                 temp_vis.Add(closed_eye);
             }
@@ -391,10 +391,12 @@ public class ram_chase : MonoBehaviour
             eye_num = queue.Dequeue();
             if (eye_num == end)
                 break;
+            Debug.Log($"eye: {this.eyes_of_ra[eye_num].eye.name} can see: ");
 
             children = this.visible_nodes(eye_num);
             for (int index = 0; index < children.Count; index++)
             {
+                Debug.Log($"{this.eyes_of_ra[index].eye.name}");
                 minecraft_distance = this.manhattan_distance(this.eyes_of_ra[children[index]].eye.transform.position, this.player_tank.transform.position);
                 this.eyes_of_ra[children[index]].distance_so_far += this.eyes_of_ra[eye_num].distance_so_far + (this.eyes_of_ra[eye_num].eye.transform.position - this.eyes_of_ra[index].eye.transform.position).magnitude;
                 this.eyes_of_ra[children[index]].nodes_so_far = this.eyes_of_ra[eye_num].nodes_so_far + 1;
@@ -407,7 +409,9 @@ public class ram_chase : MonoBehaviour
                     queue.Enqueue(children[index], this.eyes_of_ra[children[index]].cost_so_far);
                 }
             }
+            Debug.Log("end of list");
         }
+        Debug.Log("astar finished running.");
 
         return this.backtrack_path(start, eye_num);
     }
