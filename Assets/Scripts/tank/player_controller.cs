@@ -81,9 +81,10 @@ public class player_controller : MonoBehaviour
         {
             Vector3 hitPoint = hit.point;
             hitPoint.y = turret.transform.position.y;
-            Vector3 direction = hitPoint - turret.transform.position;
-            float rotationAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
-            turret.transform.localRotation = Quaternion.AngleAxis(rotationAngle + offset, Vector3.forward);
+            // Vector3 direction = hitPoint - turret.transform.position;
+            // float rotationAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+            // turret.transform.localRotation = Quaternion.AngleAxis(rotationAngle + offset, Vector3.forward);
+            turret.transform.LookAt(hitPoint, turret.transform.up);
 
             lineRend.SetPosition(0, turret.transform.position);
             lineRend.SetPosition(1, hitPoint);
