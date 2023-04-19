@@ -234,7 +234,7 @@ public class ram_chase : MonoBehaviour
     private void ai_mode_follow()
     {
         float distance_to_player = (this.transform.position - this.player_tank.transform.position).magnitude;
-        //want tank to stay a minimum of some distance away, and maximum of some distance. this makes it move to said range if it isnt where it wants to be
+        //want tank to stay a minimum of some distance away, and maximum of some distance. this makes it happen if it isnt where it wants to be
         if (distance_to_player < this.stay_away_distance_min || distance_to_player > this.stay_away_distance_max)
         {
             Vector3 direct_path_vec = this.transform.position - this.player_tank.transform.position;
