@@ -407,18 +407,18 @@ MonoBehaviour:
       m_ExpandedIDs: ee23fdffa479feff72bfffff66dcffff2efbffffc0830000d28400005ee400001ee60000160501008e0501009e080100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: TankRenderers
+        m_OriginalName: TankRenderers
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -10148
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 

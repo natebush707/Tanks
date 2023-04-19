@@ -58,19 +58,18 @@ public class ram_chase : MonoBehaviour
     private bool is_shooter;                                //does the tank shoot?
     private List<int> waypoints;                            //path for tank to follow as list of ints
     private int wp_index;                                   //which waypoint within waypoints list tank currently going to
-    private float stay_away_distance;                       //how far from the player tank will the enemy tank try to be
+    private float stay_away_distance_max;                   //how far from the player tank will the enemy tank try to be higher limit
+    private float stay_away_distance_min;                   //how far from the player tank will the enemy tank try to be lower limit
+    private float half_extra_radius = 1;                    //half of width of distance chaser tanks can be inside of in follow mode
+    private float time_till_death = 1.9f;
 
     //difficulty stuff
     private float speed = 0.5f;
     private float rot_speed = 10.0f;
     private float shot_range = 5.0f;
-    private float shot_force = 2000.0f;
+    private float shot_speed = 5.0f;
     private float fire_rate = 0.25f;
 
-    //TESTING TESTING TESTING
-
-
-    private Vector3 testing_location;
 
     // Start is called before the first frame update
     void Start()
@@ -115,9 +114,9 @@ public class ram_chase : MonoBehaviour
         switch (ai_type)
         {
             case ai_enum.rammer:
-                this.set_tankie(this.updateFSM_rammer, this.ai_mode_gps, red, false, "rammer", 0); break;
+                this.set_tankie(this.updateFSM_rammer, this.ai_mode_gps, red, false, "rammer", 0f); break;
             case ai_enum.chaser:
-                this.set_tankie(this.updateFSM_rammer, this.ai_mode_gps, blue, true, "chaser", 7); break;
+                this.set_tankie(this.updateFSM_rammer, this.ai_mode_gps, blue, true, "chaser", 7f); break;
         }
 
         //TESTING TESTING TESTING TESTING
@@ -145,7 +144,6 @@ public class ram_chase : MonoBehaviour
         if (player_tank == null)
             return;
         this.movement_policy();
-        //this.tank_audio_source.Play();
     }
 
     //ALL FSM DEFINITIONS USING METHODS BELOW THESE FSM DEF'S INSTRUCTING HOW EACH TYPE OF TANK WILL MOVE.
@@ -183,7 +181,8 @@ public class ram_chase : MonoBehaviour
 
     private void let_that_thang_rang()
     {
-        if(this.is_shooter && this.player_sighted && Time.time >= this.next_shot_time) //beef iss on sight we dont play here
+        float distance_to_player = (this.transform.position - this.player_tank.transform.position).magnitude;
+        if(this.is_shooter && this.player_sighted && Time.time >= this.next_shot_time && distance_to_player < this.shot_range) //beef iss on sight we dont play here
         {
             // spawn and tag shell
             GameObject shellClone = Instantiate(shell, this.pew_location.transform.position, this.pew_location.transform.rotation);
@@ -191,7 +190,7 @@ public class ram_chase : MonoBehaviour
             shellClone.tag = "enemyShell";
 
             // add forward force to shell
-            shellClone.GetComponent<Rigidbody>().AddForce(this.pew_location.transform.forward * this.shot_force);
+            shellClone.GetComponent<Rigidbody>().velocity = this.pew_location.transform.forward * this.shot_speed;
 
             //next time to shoot
             this.next_shot_time = Time.time + 1f / this.fire_rate;
@@ -231,13 +230,21 @@ public class ram_chase : MonoBehaviour
 
     //SOME METHODS HOLDING DIFFERENT MODES AI USES TO FIND THE NEXT LOCATION IT SHOULD AIM TO BE AT
 
-    //nighttime terrorizer
+    //nighttime terrorizer - seeks to maintain appropriate distance from player
     private void ai_mode_follow()
     {
-        //Debug.Log("ai mode follow");
-        if ((this.transform.position - this.player_tank.transform.position).magnitude < this.stay_away_distance)
-            return;
-        this.future_location = this.player_tank.transform.position;
+        float distance_to_player = (this.transform.position - this.player_tank.transform.position).magnitude;
+        if (distance_to_player < this.stay_away_distance_min || distance_to_player > this.stay_away_distance_max)
+        {
+            Vector3 direct_path_vec = this.transform.position - this.player_tank.transform.position;
+            Vector3 goldilocks_centroid = direct_path_vec.normalized * (this.stay_away_distance_min + this.half_extra_radius);
+            goldilocks_centroid += this.player_tank.transform.position;
+            this.future_location = goldilocks_centroid;
+        }
+        else
+        {
+            this.future_location = this.transform.position;
+        }
     }
 
     //uses position of player tank which is not in direct line of sight to find a path with eyes of ra
@@ -324,7 +331,17 @@ public class ram_chase : MonoBehaviour
 
     private void set_tankie(Action updateFSM_type, Action ai_mode, Material mat, bool is_shooter, string tag_name, float stay_away_distance)
     {
-        this.stay_away_distance = stay_away_distance;
+        if (stay_away_distance != 0)
+        {
+            this.stay_away_distance_max = stay_away_distance + this.half_extra_radius;
+            this.stay_away_distance_min = stay_away_distance - this.half_extra_radius;
+        }
+        else
+        {
+            this.stay_away_distance_max = 0;
+            this.stay_away_distance_min = 0;
+            this.half_extra_radius = 0;
+        }
         this.gameObject.tag = tag_name;
         this.updateFSM = updateFSM_type;
         this.movement_policy = ai_mode;
@@ -380,6 +397,7 @@ public class ram_chase : MonoBehaviour
             this.eyes_of_ra[index].distance_so_far = 0;
             this.eyes_of_ra[index].parent_index = -1;
             this.eyes_of_ra[index].nodes_so_far = 0;
+            this.eyes_of_ra[index].cost_so_far = 0;
         }
 
         PriorityQueue<int, float> queue = new PriorityQueue<int, float>();
@@ -440,6 +458,7 @@ public class ram_chase : MonoBehaviour
             death_ekusupurojon.Play();
             ekusupurojon_sound.Play();
             Destroy(this);
+            Destroy(this.gameObject, this.time_till_death);
         }
     }
 
