@@ -94,7 +94,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 193221640414639399}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -112,8 +112,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WallExplosion: {fileID: 6243306917873478314}
-  BrokenWall: {fileID: 6403140703895410150, guid: a95efa4765af324419a954629469b693,
-    type: 3}
 --- !u!1001 &478764406
 PrefabInstance:
   m_ObjectHideFlags: 0

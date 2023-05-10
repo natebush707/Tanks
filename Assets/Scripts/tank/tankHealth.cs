@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -60,7 +59,7 @@ public class tankHealth : MonoBehaviour
         if(other.tag == "enemyShell"){
             takeDamage(shellDamage);
         }
-        if(other.tag == "rammer" && !other.gameObject.IsDestroyed())
+        if(other.tag == "rammer")
         {
             GameManager.gameOver();
             onDeath();
