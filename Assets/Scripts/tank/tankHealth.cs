@@ -11,6 +11,8 @@ public class tankHealth : MonoBehaviour
     public Image image; 
     public float shellDamage = 25f;
 
+    public GameManagerScript GameManager;
+    private bool isDead;
     public ParticleSystem explosionPrefab;
     [SerializeField]
     private float currentHealth;
@@ -35,7 +37,9 @@ public class tankHealth : MonoBehaviour
         this.currentHealth -= damageTaken;
         updateUI();
 
-        if(this.currentHealth <= 0){
+        if(this.currentHealth <= 0 && !isDead){
+            isDead = true;
+            GameManager.gameOver();
             onDeath();
         }
     }
@@ -58,6 +62,7 @@ public class tankHealth : MonoBehaviour
         }
         if(other.tag == "rammer" && !other.gameObject.IsDestroyed())
         {
+            GameManager.gameOver();
             onDeath();
         }
     }

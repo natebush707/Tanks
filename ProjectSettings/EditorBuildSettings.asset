@@ -12,9 +12,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Desert1.unity
     guid: b31842c2bb0d3d84eb8e1658e2b1b11a
   - enabled: 1
-    path: Assets/Scenes/desert_aitest.unity
-    guid: e75beac003515ec4d954c8dc21ddc5cd
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/Desert2.unity
+    guid: c3b6bc33a961d4336ab00721ce046bf3
+  - enabled: 1
+    path: Assets/Scenes/Desert3.unity
+    guid: ce3498ef8b34b4a8a9e2a771af65f30f
+  - enabled: 1
+    path: Assets/Scenes/Snow1.unity
+    guid: 37b18e6758d23364297c556854385353
+  - enabled: 1
+    path: Assets/Scenes/Snow2.unity
+    guid: 924b0e6a98e2c5c449fb6efec1a51752
+  - enabled: 1
+    path: Assets/Scenes/Snow3.unity
+    guid: 1396bdbfbf3f26d42aba0836f3942505
   m_configObjects: {}
